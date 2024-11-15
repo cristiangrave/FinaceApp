@@ -7,11 +7,11 @@ import { User } from './user/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { Transaction } from './transaction/transaction.entity';
-import { CategoryService } from './category/category.service';
-import { CategoryModule } from './category/category.module';
+/* import { CategoryService } from './category/category.service';
+ */ import { CategoryModule } from './category/category.module';
 import { Category } from './category/category.entity';
-import { EncryptService } from './shared/encrypt.service';
-
+/* import { EncryptService } from './shared/encrypt.service';
+ */
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -21,16 +21,14 @@ import { EncryptService } from './shared/encrypt.service';
       username: 'root',
       password: 'root',
       database: 'finance_app',
-      entities: [
-        User,
-      Transaction,
-      Category],
+      entities: [User, Transaction, Category],
       synchronize: true,
     }),
     UserModule,
     AuthModule,
     CategoryModule,
-    TransactionModule],
+    TransactionModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

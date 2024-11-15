@@ -6,12 +6,9 @@ import { UserController } from './user.controller';
 import { EncryptService } from 'src/shared/encrypt.service';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([User])
-  ],  
-  providers: [UserService,EncryptService],
+  imports: [TypeOrmModule.forFeature([User])],
+  providers: [UserService, EncryptService],
   controllers: [UserController],
-  exports: [UserService,EncryptService],
-
+  exports: [UserService, EncryptService],
 })
 export class UserModule {}

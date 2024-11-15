@@ -15,7 +15,9 @@ export class TransactionService {
   }
 
   async findOne(id: number): Promise<Transaction> {
-    const transaction = await this.transactionRepository.findOne({ where: { id } });
+    const transaction = await this.transactionRepository.findOne({
+      where: { id },
+    });
     if (!transaction) {
       throw new NotFoundException(`Transacción con id ${id} no encontrada`);
     }
@@ -27,7 +29,10 @@ export class TransactionService {
     return await this.transactionRepository.save(transaction);
   }
 
-  async update(id: number, updateData: Partial<Transaction>): Promise<Transaction> {
+  async update(
+    id: number,
+    updateData: Partial<Transaction>,
+  ): Promise<Transaction> {
     const transaction = await this.transactionRepository.preload({
       id,
       ...updateData,
