@@ -15,7 +15,7 @@ import { Category } from './category/category.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres' /* recordar que debemos de tener una imagen activa dentro en nuestra computdarora para poder tener acceso a una base de datos el mayer  es bien raido es algo que se puede aprovechar  va a poner cualquier generador asi como asi hay sesgo es una empresa es la combinacion estrucutra y cosotos oferta y demanda esos acaban de levantar una  */,
+      type: 'postgres' /* the nokie o the cokie */,
       host: 'autorack.proxy.rlwy.net:51073',
       port: 5432,
       username: 'postgres',
